@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
 
@@ -28,4 +28,3 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           publish-dir: ./_site
-
