@@ -1,0 +1,27 @@
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+
+# Jekyll build directory
+_site/
+
+# Bundler directory
+.bundle/
+
+# Jekyll metadata file
+.jekyll-metadata
+
+# If using a Jekyll environment
+.jekyll-cache/
+
+# If using the Jekyll optional gem theme,
+# the gem-based theme cache
+.jekyll-cache/
+
+# Gemfile lock file
+Gemfile.lock
+
+# Other files and directories to consider ignoring:
+
