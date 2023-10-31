@@ -1,7 +1,22 @@
 ---
-layout: default
-<ul>
-  {% for file in site.static_files %}
-    <li><a href="{{ file.path }}">{{ file.name }}</a></li>
-  {% endfor %}
-</ul>
+layout: null
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>File Listing</title>
+</head>
+<body>
+    <ul>
+        {% for file in site.static_files %}
+            {% if file.extname == '.pdf' %}
+                <li><a href="{{ file.path }}">{{ file.name }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
