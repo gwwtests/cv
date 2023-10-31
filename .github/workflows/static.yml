@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  github-pages:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,8 +23,19 @@ jobs:
           bundle install
           bundle exec jekyll build
 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./_site
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          publish-dir: ./_site
+          token: ${{ secrets.GITHUB_TOKEN }}
